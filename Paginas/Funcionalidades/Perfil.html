@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomadoo</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="perfil-body">
+
+    <header>
+    <section class="Navegar">
+      <div class="logo">
+        <span style="font-family: 'Protest Riot', cursive;">Nomadoo</span>
+      </div>
+
+      <nav class="menu">
+        <a href="/Paginas/index.html">Início</a>
+        <a href="#">Destinos</a>
+        <a href="/Paginas/Funcionalidades/Viajantes_Swipe.html">Viajantes</a>
+        <a href="#">Grupos</a>
+        <a href="#">Sobre</a>
+      </nav>
+
+      <div class="Log-area">
+        <a href="/Paginas/Login_Cadastro/Entrar.html"><button class="login-btn">Entrar</button></a>
+        <a href="/Paginas/Login_Cadastro/Cadastrar.html"><button class="signup-btn">Cadastrar</button></a>
+      </div>
+
+      <div class="User-area" style="display: none;">
+
+        <div class="icon-btn notificacao">
+            <i class="fa-solid fa-heart"></i>
+            <span class="notificacao-ponto"></span>
+        </div>
+
+        <div class="icon-btn conversa">
+          <i class="fa-solid fa-comment"></i>
+        </div>
+
+        <a href="/Paginas/Funcionalidades/Perfil.html">
+        <div class="user-foto">
+          <img src="/IMG/Stories/foto.png" alt="Foto do usuário">
+        </div>
+        </a>
+        
+      </div>
+    </section>
+
+   
+    </header>
+
+    <header class="perfil-capa">
+        <button class="perfil-editar-capa">
+            <img src="/IMG/Perfil/camera2.png">Editar Capa
+        </button>
+
+        <button class="perfil-sair">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </button>
+
+            <div class="perfil-foto-area">
+                <div class="perfil-foto">
+                    <img src="/IMG/Stories/foto.png" alt="Foto do perfil">
+                </div>
+
+                <label class="perfil-alterar-foto">
+                    <img src="/IMG/Perfil/ColocarFoto.png" alt="">
+                    <input type="file" hidden>
+                </label>
+            </div>
+
+    </header>
+
+    <section class="perfil-main">
+    <section class="perfil-card">
+
+                    <div class="perfil-info-topo">
+                        <h2 class="perfil-nome">Maria Luiza Altenhofen Loth</h2>
+                        <span class="perfil-verificado">
+                            <img src="/IMG/Viajantes_Perfils/verified.png" alt="">
+                        </span>
+
+                        <button class="perfil-editar">
+                            <img src="/IMG/Perfil/edit.png" alt="">
+                        </button>
+                    </div>
+
+                    <div class="perfil-detalhes">
+                        <p><i class="fa-solid fa-location-dot"></i> Taquara, RS</p>
+                        <p><i class="fa-solid fa-star"></i> 5.0</p>
+                    </div>
+
+        </section> 
+
+        <!-- SOBRE MIM -->
+        <section class="perfil-box perfil-sobre-mim">
+            <h3>Sobre mim</h3>
+
+            <p class="perfil-texto">
+                Apaixonada por aventuras e novas culturas! 🌍 Adoro trilhas, praias paradisíacas e conhecer pessoas incríveis pelo caminho. Sempre em busca da próxima aventura e de experiências autênticas. Vamos viajar juntos?
+            </p>
+
+            <div class="perfil-interesses">
+                <span>Aventura</span>
+                <span>Gastronomia</span>
+                <span>Cultura</span>
+            </div>
+        </section>
+
+
+        <section class="box-for-two">
+            <!-- VIAGENS ANTERIORES -->
+            <section class="perfil-box two-box">
+                <h3>Viagens anteriores</h3>
+
+                <div class="perfil-viagem">
+                    <img src="/IMG/Perfil/Viagem1.png">
+                    <div class="perfil-viagem-info">
+                        <span>Bali, Indonésia</span>
+                        <span>Mar 2024</span>
+                    </div>
+                </div>
+
+                <div class="perfil-viagem">
+                    <img src="/IMG/Perfil/Viagem2.png">
+                    <div class="perfil-viagem-info">
+                        <span>Machu Picchu, Peru</span>
+                        <span>Dez 2023</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PRÓXIMAS VIAGENS -->
+            <section class="perfil-box two-box">
+                <h3>Próximas viagens</h3>
+
+                <div class="proxima prox2">
+                    <p class="Lugares"><i class="fa-solid fa-location-dot Lugar"></i> Dubai, EAU</p>
+                    <p style=" color: #767676;"><i style=" color: #767676;" class="fa-solid fa-calendar calendario2"></i> 15 Jan 2026</p>
+                </div>
+
+                <div class="proxima prox2">
+                    <p class="Lugares"><i class="fa-solid fa-location-dot Lugar"></i> Santiago de Compostela, Espanha</p>
+                    <p style="color: #767676;"><i style=" color: #767676;" class="fa-solid fa-calendar calendario2"></i> 29 Fev 2026</p>
+                </div>
+
+            </section>
+        </section>
+        
+
+        <!-- COMPANHEIROS -->
+        <section class="perfil-box">
+            <h3>Companheiros de viagem</h3>
+
+            <div class="perfil-companheiro">
+                <img src="/IMG/Stories/foto1.png" class="perfil-comp-foto">
+
+                <div class="perfil-comp-info">
+                    <strong>Carlinha Carvalho</strong>
+                    <div class="nota-data">
+                        <span class="perfil-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                        <span class="perfil-data">16/11/2024</span>
+                    </div>
+
+                    <p>Excelente companhia de viagem! Muito organizada e divertida.</p>
+                </div>
+
+                <button class="perfil-more"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            </div>
+
+            <div class="perfil-companheiro">
+                <img src="/IMG/Stories/foto2.png" class="perfil-comp-foto">
+
+                <div class="perfil-comp-info">
+                    <strong>Lucca Oliveira de Machado</strong>
+                    <div class="nota-data">
+                        <span class="perfil-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                        <span class="perfil-data">24/09/2026</span>
+                    </div>
+                    
+                    <p>Adorei conhecer a Maria! Viagem incrível para Bali juntas.</p>
+                </div>
+
+                <button class="perfil-more"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            </div>
+        </section>
+  
+    </section>
+
+    <!-- POPUP DE CONFIRMAÇÃO DE LOGOUT -->
+    <div class="logout-popup" id="logoutPopup">
+    <div class="logout-box">
+        <h3>Deseja realmente sair?</h3>
+        <p>Você precisará fazer login novamente para acessar seu perfil.</p>
+
+        <div class="logout-buttons">
+            <button id="cancelLogout" class="btn-cancelar">Cancelar</button>
+            <button id="confirmLogout" class="btn-sair">Sair</button>
+        </div>
+    </div>
+    </div>
+   
+    <script src="/scriptGlobal.js"></script>
+
+</body>
+
+</html>

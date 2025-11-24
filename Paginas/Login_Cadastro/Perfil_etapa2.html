@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seus Interesses</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="fundo-autenticacao">
+
+<a href="/Paginas/Login_Cadastro/Perfil_etapa1.html">
+    <button class="botao-voltar"><i class="fa-solid fa-arrow-left"></i></button>
+</a>
+
+<div class="caixa-perfil">
+
+    <h2 class="titulo-interesses">Quase lá!</h2>
+
+    <div class="cartao-interesses">
+
+        <h3 class="subtitulo-interesses">Selecione seus interesses</h3>
+
+        <div class="lista-interesses">
+            <span class="item-interesse">Aventura</span>
+            <span class="item-interesse">Praia</span>
+            <span class="item-interesse">Templos</span>
+            <span class="item-interesse">Natureza</span>
+            <span class="item-interesse">Cultura</span>
+            <span class="item-interesse">Fotografia</span>
+            <span class="item-interesse">História</span>
+            <span class="item-interesse">Gastronomia</span>
+            <span class="item-interesse">Mochilão</span>
+            <span class="item-interesse">Montanhas</span>
+            <span class="item-interesse">Trilhas</span>
+        </div>
+
+        <button class="botao-principal">PRONTO!</button>
+
+    </div>
+
+</div>
+
+
+
+<script> 
+    const botaoPrincipal = document.querySelector('.botao-principal');
+    const itemInteresse = document.querySelectorAll('.item-interesse');
+
+     itemInteresse.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('item-interesse-selecionado');
+        });
+    });
+
+    botaoPrincipal.addEventListener('click', (e) => {
+
+        const selecionados = document.querySelectorAll('.item-interesse-selecionado');
+
+        if (selecionados.length === 0) {
+            e.preventDefault();
+            alert("Selecione pelo menos 1 interesse para continuar.");
+            return;
+        }
+
+        localStorage.setItem('usuarioLogado', 'true');
+        window.location.href = '/Paginas/index.html';
+    });
+
+
+</script>
+
+<script src="/scriptGlobal.js"></script>
+</body>
+</html>

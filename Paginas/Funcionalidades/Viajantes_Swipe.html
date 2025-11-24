@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomadoo</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="body-tinder">
+    
+<div class="tinder-wrapper">
+  <div class="tinder-card-ui">
+
+    <img class="tinder-photo" src="/IMG/Viajantes_Perfils/Image1.png" alt="Foto">
+
+    <div class="tinder-info">
+      <h3>Julia Caravel, 31 <img src="/IMG/Viajantes_Perfils/verified.png" class="tinder-verified"></img></h3>
+      <p class="tinder-bio">Apaixonada por praias e trilhas!</p>
+
+      <div class="tinder-tags-ui">
+        <span class="item-interesse">Praias</span>
+        <span class="item-interesse">Aventura</span>
+      </div>
+    </div>
+
+    <div class="tinder-buttons">
+      <button class="tinder-btn tndr-no">✖</button>
+      <button class="tinder-btn tndr-yes">✔</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const card = document.querySelector('.tinder-card-ui');
+
+let startX = 0;
+let currentX = 0;
+let dragging = false;
+
+card.addEventListener("pointerdown", (e) => {
+  dragging = true;
+  startX = e.clientX;
+});
+
+document.addEventListener("pointermove", (e) => {
+  if (!dragging) return;
+
+  currentX = e.clientX - startX;
+  card.style.transform = `translateX(${currentX}px) rotate(${currentX / 20}deg)`;
+});
+
+document.addEventListener("pointerup", () => {
+  if (!dragging) return;
+  dragging = false;
+
+  if (currentX > 120) {
+    card.classList.add("swipe-right");
+  } else if (currentX < -120) {
+    card.classList.add("swipe-left");
+  } else {
+    card.style.transform = "translateX(0) rotate(0)";
+  }
+});
+</script>
+
+<script src="/scriptGlobal.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomadoo</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+<div class="container">
+
+  <header>
+    <section class="Navegar">
+      <div class="logo">
+        <span style="font-family: 'Protest Riot', cursive;">Nomadoo</span>
+      </div>
+
+      <nav class="menu">
+        <a href="#" class="active">Início</a>
+        <a href="#">Destinos</a>
+        <a href="/Paginas/Funcionalidades/Viajantes_Swipe.html">Viajantes</a>
+        <a href="#">Grupos</a>
+        <a href="#">Sobre</a>
+      </nav>
+
+      <div class="Log-area">
+        <a href="/Paginas/Login_Cadastro/Entrar.html"><button class="login-btn">Entrar</button></a>
+        <a href="/Paginas/Login_Cadastro/Cadastrar.html"><button class="signup-btn">Cadastrar</button></a>
+      </div>
+
+      <div class="User-area" style="display: none;">
+
+        <div class="icon-btn notificacao">
+            <i class="fa-solid fa-heart"></i>
+            <span class="notificacao-ponto"></span>
+        </div>
+
+        <div class="icon-btn conversa">
+          <i class="fa-solid fa-comment"></i>
+        </div>
+
+        <a href="/Paginas/Funcionalidades/Perfil.html">
+        <div class="user-foto">
+          <img src="/IMG/Stories/foto.png" alt="Foto do usuário">
+        </div>
+        </a>
+        
+      </div>
+    </section>
+
+    <section class="hero">
+      <h2>Novos lugares, novas conexões</h2>
+      <p>Conheça viajantes, faça conexões e viva histórias únicas</p>
+
+      <div class="busca">
+        <input type="text" placeholder="Buscar destino, cidade ou viajante...">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </section>
+
+    <section class="como-funciona">
+      <h2>Como Funciona</h2>
+      <p>Comece sua jornada em 3 passos simples</p>
+
+      <div class="passos">
+        <div class="passo">
+          <i class="fa-solid fa-user-plus"></i>
+          <h3>1. Crie seu perfil</h3>
+          <p>Mostre quem você é e o que busca nas suas aventuras</p>
+        </div>
+
+        <div class="passo">
+          <i class="fa-solid fa-comments"></i>
+          <h3>2. Ache sua galera</h3>
+          <p>Conheça viajantes que querem mais do que apenas um destino</p>
+        </div>
+
+        <div class="passo">
+          <i class="fa-solid fa-plane-departure"></i>
+          <h3>3. Partiu aventura!</h3>
+          <p>Planejem, descubram e deixem a viagem contar a história de vocês</p>
+        </div>
+      </div>
+    </section>
+
+  </header>
+
+  <main>
+
+    <section class="stories-container stories-scroll">
+        <div class="story">
+            <div class="story-img add-story">
+                <img src="/IMG/Stories/foto.png" alt="Seu Story">
+            </div>
+            <span>Seu Story</span>
+        </div>
+
+        <div class="story">
+            <div class="story-img">
+                <img src="/IMG/Stories/foto1.png" alt="Carlinha">
+            </div>
+            <span>Carlinha</span>
+        </div>
+
+        <div class="story">
+            <div class="story-img">
+                <img src="/IMG/Stories/foto2.png" alt="Lucca">
+            </div>
+            <span>Lucca</span>
+        </div>
+
+        <div class="story">
+            <div class="story-img">
+                <img src="/IMG/Stories/foto3.png" alt="Juliana">
+            </div>
+            <span>Juliana</span>
+        </div>
+
+        <div class="story">
+            <div class="story-img">
+                <img src="/IMG/Stories/foto4.png" alt="Pierre">
+            </div>
+            <span>Pierre</span>
+        </div>
+
+        <div class="story">
+            <div class="story-img">
+                <img src="/IMG/Stories/foto5.png" alt="Camila">
+            </div>
+            <span>Camila</span>
+        </div>
+    </section>
+
+    <section class="destaques">
+      <div class="titulo">
+        <h2>Destinos em destaque</h2>
+        <div class="divisoria"></div>
+      </div>
+      
+      <div class="cards-container" id="cards-destaques">
+
+        <div class="card">
+          <img src="/IMG/DestinosEMdestaque/img1.png" alt="Praia Tropical - Bahia">
+          <div class="card-content">
+            <h3>Praia Tropical - Bahia</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Salvador, BA</p>
+            <div class="info">
+              <span><i class="fa-solid fa-star"></i> 4.4</span>
+              <span class="grop"><i class="fa-solid fa-user-group"></i> 392</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="/IMG/DestinosEMdestaque/img2.png" alt="Trilha nas Montanhas">
+          <div class="card-content">
+            <h3>Trilha nas Montanhas</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Chapada Diamantina, BA</p>
+            <div class="info">
+              <span><i class="fa-solid fa-star"></i> 4.8</span>
+              <span class="grop"><i class="fa-solid fa-user-group"></i> 245</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="/IMG/DestinosEMdestaque/img3.png" alt="Festival de Música">
+          <div class="card-content">
+            <h3>Festival de Música</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Rio de Janeiro, RJ</p>
+            <div class="info">
+              <span><i class="fa-solid fa-star"></i> 4.2</span>
+              <span class="grop"><i class="fa-solid fa-user-group"></i> 167</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="/IMG/DestinosEMdestaque/img4.png" alt="Mochilão Europa">
+          <div class="card-content">
+            <h3>Mochilão Europa</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Europa</p>
+            <div class="info">
+              <span><i class="fa-solid fa-star"></i> 4.1</span>
+              <span class="grop"><i class="fa-solid fa-user-group"></i> 207</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="/IMG/DestinosEMdestaque/img5.png" alt="Aventura na Floresta">
+          <div class="card-content">
+            <h3>Aventura na Floresta</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Amazônia, AM</p>
+            <div class="info">
+              <span><i class="fa-solid fa-star"></i> 4.9</span>
+              <span class="grop"><i class="fa-solid fa-user-group"></i> 552</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="/IMG/DestinosEMdestaque/img6.png" alt="Surf Trip Bali">
+          <div class="card-content">
+            <h3>Surf Trip Bali</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Bali, Indonésia</p>
+            <div class="info">
+              <span><i class="fa-solid fa-star"></i> 3.9</span>
+              <span class="grop"><i class="fa-solid fa-user-group"></i> 271</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grupos">
+      <div class="titulo">
+        <h2>Grupos de Viagens</h2>
+        <div class="divisoria"></div>
+      </div>
+      <div class="cards-container" id="cards-grupos">
+
+        <div class="card">
+          <img class="group" src="/IMG/GruposDEviagem/img1.png" alt="Mochileiros Brasil">
+          <div class="card-content">
+            <div class="tag">Aventura</div>
+            <h3>Mochileiros Brasil</h3>
+            <p>Grupo para quem ama viajar com a mochila nas costas explorando o Brasil</p>
+            <div class="infoG">
+              <span class="grop"><i class="fa-solid fa-user-group"></i> 1.593 Membros</span>
+            </div>
+            <div class="proxima">
+              <p class="tituloProxima">Próxima viagem:</p>
+              <p class="Lugares"><i class="fa-solid fa-location-dot Lugar"></i> Chapada dos Veadeiros</p>
+              <p><i class="fa-solid fa-calendar calendario"></i> 15 Nov 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="group" src="/IMG/GruposDEviagem/img2.png" alt="Praias Paradisíacas">
+          <div class="card-content">
+            <div class="tag praia">Praias</div>
+            <h3>Praias Paradisíacas</h3>
+            <p>Amantes de praias tropicais e águas cristalinas</p>
+            <div class="infoG">
+              <span class="grop"><i class="fa-solid fa-user-group"></i> 864 Membros</span>
+            </div>
+            <div class="proxima">
+              <p class="tituloProxima">Próxima viagem:</p>
+              <p class="Lugares"><i class="fa-solid fa-location-dot Lugar"></i> Fernando de Noronha</p>
+              <p><i class="fa-solid fa-calendar calendario"></i> 01 Dez 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="group" src="/IMG/GruposDEviagem/img3.png" alt="Europa Cultural">
+          <div class="card-content">
+            <div class="tag cultura">Cultura</div>
+            <h3>Europa Cultural</h3>
+            <p>Explorando museus, galerias e a história europeia</p>
+            <div class="infoG">
+              <span class="grop"><i class="fa-solid fa-user-group"></i> 587 Membros</span>
+            </div>
+            <div class="proxima">
+              <p class="tituloProxima">Próxima viagem:</p>
+              <p class="Lugares" ><i class="fa-solid fa-location-dot Lugar"></i> Paris & Roma</p>
+              <p><i class="fa-solid fa-calendar calendario" ></i> 01 Fev 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="group" src="/IMG/GruposDEviagem/img4.png" alt="Aventureiros Extremos">
+          <div class="card-content">
+            <div class="tag aventura">Aventura</div>
+            <h3>Aventureiros Extremos</h3>
+            <p>Para quem busca adrenalina: escalada, rafting, parapente</p>
+            <div class="infoG">
+              <span class="grop"><i class="fa-solid fa-user-group"></i> 445 Membros</span>
+            </div>
+            <div class="proxima">
+              <p class="tituloProxima">Próxima viagem:</p>
+              <p class="Lugares"><i class="fa-solid fa-location-dot Lugar"></i> Patagônia</p>
+              <p><i class="fa-solid fa-calendar calendario"></i> 05 Mar 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="group" src="/IMG/GruposDEviagem/img5.png" alt="Gastronomia pelo Mundo">
+          <div class="card-content">
+            <div class="tag gastronomia">Gastronomia</div>
+            <h3>Gastronomia pelo Mundo</h3>
+            <p>Viagens focadas em experiências culinárias únicas</p>
+            <div class="infoG">
+              <span class="grop"><i class="fa-solid fa-user-group"></i> 725 Membros</span>
+            </div>
+            <div class="proxima">
+              <p class="tituloProxima">Próxima viagem:</p>
+              <p class="Lugares"><i class="fa-solid fa-location-dot Lugar"></i> Toscana</p>
+              <p><i class="fa-solid fa-calendar calendario"></i> 20 Abr 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="group" src="/IMG/GruposDEviagem/img6.png" alt="Fotógrafos Viajantes">
+          <div class="card-content">
+            <div class="tag fotografia">Fotografia</div>
+            <h3>Fotógrafos Viajantes</h3>
+            <p>Capturando os melhores momentos ao redor do mundo</p>
+            <div class="infoG">
+              <span class="grop"><i class="fa-solid fa-user-group"></i> 1.089 Membros</span>
+            </div>
+            <div class="proxima">
+              <p class="tituloProxima">Próxima viagem:</p>
+              <p class="Lugares"><i class="fa-solid fa-location-dot Lugar"></i> Islândia</p>
+              <p><i class="fa-solid fa-calendar calendario"></i> 15 Jun 2025</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside>
+    <div class="ad-box promo">
+      <img src="/IMG/Anuncio/ad1.png" alt="Promoção Paris">
+    </div>
+
+    <div class="ad-box promo">
+      <img src="/IMG/Anuncio/ad2.jpg" alt="Promoção Paris">
+    </div>
+  </aside>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <div class="logoF">
+          <img src="/IMG/Logo/Logo.png" alt="Logo Nomadoo">
+          <h2 style="font-family: 'Protest Riot', cursive;">Nomadoo</h2>
+        </div>
+        <p>Conectando viajantes e criando experiências inesquecíveis ao redor do mundo.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="#">Como Funciona</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Suporte</h3>
+        <ul>
+          <li><a href="#">Central de Ajuda</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Segurança</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contato">
+        <h3>Contato</h3>
+        <ul>
+          <li><i class="fa-regular fa-envelope"></i> contato@nomadoo.com</li>
+          <li><i class="fa-solid fa-phone"></i> (11) 98765-4321</li>
+          <li><i class="fa-solid fa-location-dot"></i> Taquara, Brasil</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Nomadoo. Todos os direitos reservados.</p>
+    </div>
+
+  </footer>
+
+</div>
+
+<script>
+document.querySelectorAll('.cards-container').forEach(container => {
+
+  let estaArrastando = false; // indica se o mouse está pressionado
+  let posicaoInicial;         // posição do clique dentro do container
+  let scrollInicial;          // posição de rolagem antes do arraste
+
+  container.addEventListener('mousedown', evento => {
+    estaArrastando = true;  
+    container.classList.add('ativo'); 
+    posicaoInicial = evento.pageX - container.offsetLeft; 
+    scrollInicial = container.scrollLeft; 
+  });
+
+  
+  container.addEventListener('mouseleave', () => {
+    estaArrastando = false; 
+  });
+
+ 
+  container.addEventListener('mouseup', () => {
+    estaArrastando = false; 
+  });
+
+  container.addEventListener('mousemove', evento => {
+    if (!estaArrastando) return; 
+    evento.preventDefault();
+    const posicaoAtual = evento.pageX - container.offsetLeft; 
+    const distanciaPercorrida = (posicaoAtual - posicaoInicial) * 1.2; 
+    container.scrollLeft = scrollInicial - distanciaPercorrida; 
+  });
+
+});
+</script>
+
+<script>
+function ativarDragScrollNosStories() {
+  const stories = document.querySelector('.stories-scroll');
+
+  if (!stories) return;
+
+  // só ativa se a tela for pequena
+  if (window.innerWidth > 768) {
+    stories.style.overflowX = "visible"; 
+    return;
+  }
+
+  stories.style.overflowX = "auto"; // permite rolagem horizontal no mobile
+
+  let arrastando = false;
+  let posInicial;
+  let scrollInicial;
+
+  stories.addEventListener('mousedown', e => {
+    arrastando = true;
+    posInicial = e.pageX - stories.offsetLeft;
+    scrollInicial = stories.scrollLeft;
+    stories.classList.add('ativo');
+  });
+
+  stories.addEventListener('mouseleave', () => {
+    arrastando = false;
+  });
+
+  stories.addEventListener('mouseup', () => {
+    arrastando = false;
+  });
+
+  stories.addEventListener('mousemove', e => {
+    if (!arrastando) return;
+    e.preventDefault();
+    const posAtual = e.pageX - stories.offsetLeft;
+    const deslocamento = (posAtual - posInicial) * 1.2;
+    stories.scrollLeft = scrollInicial - deslocamento;
+  });
+}
+
+ativarDragScrollNosStories();
+
+window.addEventListener('resize', ativarDragScrollNosStories);
+</script>
+
+<script src="/scriptGlobal.js"></script>
+
+</body>
+</html>

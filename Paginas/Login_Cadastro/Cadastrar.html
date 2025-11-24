@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="fundo-autenticacao">
+
+<a href="/Paginas/index.html">
+    <button class="botao-voltar"><i class="fa-solid fa-arrow-left"></i></button>
+</a>
+
+<div class="caixa-autenticacao cadastro">
+
+    <div class="logo-titulo-autenticacao">
+      <img src="/IMG/Logo/Logo.png" alt="Logo Nomadoo">
+      <h2 style="font-family: 'Protest Riot', cursive;">Nomadoo</h2>
+    </div>
+
+    <div class="cartao-autenticacao">
+
+        <form class="formulario-autenticacao" action="/Paginas/Login_Cadastro/Perfil_etapa1.html">
+            <input type="text" placeholder="nome de usuário" required>
+            <input type="email" placeholder="seu@email.com" required>
+            <input type="password" placeholder="senha" required>
+            <input type="password" placeholder="confirmar senha" required>
+
+            <button class="botao-principal" type="submit">CADASTRAR-SE</button>
+        </form>
+
+        <div class="divisor-autenticacao">OU</div>
+
+        <button class="botao-google">
+            <img src="/IMG/Logo/IconGoogle.png">
+            CONTINUAR COM GOOGLE
+        </button>
+
+        <p class="rodape-autenticacao">
+            Já tem uma conta?
+            <a href="/Paginas/Login_Cadastro/Entrar.html">Entrar</a>
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<script>
+    const botaoGoogle = document.querySelector('.botao-google');
+
+    botaoGoogle.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = '/Paginas/Login_Cadastro/Perfil_etapa1.html';
+    });
+
+
+</script>
+<script src="/scriptGlobal.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando seu Perfil</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="fundo-autenticacao">
+
+<a href="/Paginas/Login_Cadastro/Cadastrar.html">
+    <button class="botao-voltar"><i class="fa-solid fa-arrow-left"></i></button>
+</a>
+
+<div class="caixa-perfil">
+
+    <div class="cartao-perfil">
+
+        <div class="foto-perfil-area">
+            <div class="circulo-foto">
+                <img src="/IMG/Perfil/CriandoPerfil.png" alt="Foto">
+            </div>
+
+            <label class="botao-foto">
+                <img src="/IMG/Perfil/ColocarFoto.png" alt="Clique para colocar foto">
+                <input type="file" accept="image/*" hidden>
+            </label>
+        </div>
+
+        <h2 class="titulo-perfil">Criando seu perfil</h2>
+
+        <form class="formulario-perfil" action="/Paginas/Login_Cadastro/Perfil_etapa2.html">
+            <input type="text" placeholder="nome completo" required>
+            <input type="text" placeholder="dd/mm/ano" required>
+            <input type="text" placeholder="cidade" required>
+            <textarea placeholder="biografia"></textarea required>
+
+            <button class="botao-principal" type="submit">PRÓXIMO</button>
+        </form>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
