@@ -44,6 +44,6 @@ if (confirmBtn && popup) {
     confirmBtn.addEventListener("click", () => {
         localStorage.removeItem("usuarioLogado");
         atualizarInterfaceLogin();
-        window.location.href = "/Paginas/index.html";
+        window.location.href = "/index.html";
     });
 }
