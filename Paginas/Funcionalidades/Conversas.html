@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomadoo</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="body-conversa">
+
+<div class="container-principal">
+
+    <aside class="painel-conversas" id="painelConversas">
+        <div class="topo-conversas">
+            <h2 style="font-family: 'Protest Riot', cursive;">Nomadoo</h2>
+        </div>
+
+        <div class="busca-conversas">
+            <a href="/Paginas/index.html">
+                <button class="botao-voltar-conversa"><i class="fa-solid fa-arrow-left"></i></button>
+            </a>
+            <input type="text" placeholder="Buscar conversas">
+        </div>
+
+        <ul class="lista-conversas">
+            <li class="item-conversa" onclick="abrirConversa(0)">
+                <img src="/IMG/Stories/foto1.png" class="foto-contato">
+                <div class="info-texto">
+                    <h3>Carlinha Carvalho</h3>
+                    <p>Perfeito! Março é uma ótima época</p>
+                </div>
+                <span class="tempo">6min</span>
+            </li>
+
+            <li class="item-conversa" onclick="abrirConversa(1)">
+                <img src="/IMG/Stories/foto2.png" class="foto-contato">
+                <div class="info-texto">
+                    <h3>Lucca Oliveira de Machado</h3>
+                    <p>Adorei suas fotos de Bali!</p>
+                </div>
+                <span class="tempo">2h</span>
+            </li>
+
+        </ul>
+    </aside>
+
+    <section class="painel-mensagens" id="painelMensagens">
+        
+        <div class="topo-mensagens">
+            <button class="botao-voltarC" onclick="voltarConversas()"><i class="fa-solid fa-arrow-left"></i></button>
+            <img src="/IMG/Stories/foto1.png" class="foto-contato">
+            <h3 class="nome-contato">Carlinha Carvalho</h3>
+        </div>
+
+        <div class="corpo-mensagens" id="corpoMensagens">
+            <div class="mensagem mensagem-recebida">
+                Oi! Vi que você também está planejando ir para lá!
+            </div>
+
+            <div class="mensagem mensagem-enviada">
+                Sim! Estou super animado(a). Você já definiu as datas?
+            </div>
+        </div>
+
+        <div class="enviar-msg">
+            <input type="text" id="caixaMensagem" placeholder="Digite sua mensagem...">
+            <button class="botao-enviar" onclick="enviarMensagem()">➤</button>
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+    // Abrir conversa no mobile
+function abrirConversa(indice) {
+    const painelConversas = document.getElementById("painelConversas");
+    const painelMensagens = document.getElementById("painelMensagens");
+
+    // No mobile, esconde conversas e mostra mensagens
+    if (window.innerWidth <= 850) {
+        painelConversas.classList.add("escondido");
+        painelMensagens.classList.add("ativo");
+    }
+}
+
+// Botão voltar
+function voltarConversas() {
+    const painelConversas = document.getElementById("painelConversas");
+    const painelMensagens = document.getElementById("painelMensagens");
+
+    painelConversas.classList.remove("escondido");
+    painelMensagens.classList.remove("ativo");
+}
+
+// Enviar mensagem
+function enviarMensagem() {
+    const caixaMensagem = document.getElementById("caixaMensagem");
+    const corpoMensagens = document.getElementById("corpoMensagens");
+
+    const texto = caixaMensagem.value.trim();
+    if (texto === "") return;
+
+    const novaMsg = document.createElement("div");
+    novaMsg.classList.add("mensagem", "mensagem-enviada");
+    novaMsg.textContent = texto;
+
+    corpoMensagens.appendChild(novaMsg);
+
+    caixaMensagem.value = "";
+    corpoMensagens.scrollTop = corpoMensagens.scrollHeight;
+}
+
+</script>
+
+<script src="/scriptGlobal.js"></script>
+</body>
+</html>

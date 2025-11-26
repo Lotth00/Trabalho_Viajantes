@@ -1,8 +1,55 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  --min-font-xs: 14px;
+  --min-font-sm: 15px;
+  --min-font-md: 16px;
+  --min-font-lg: 17px;
+  --min-font-xl: 22px;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, button, input {
+  font-size: max(var(--min-font-sm), 0.8em);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  font-size: max(14px, 0.9vmax) !important;
+  outline: none;
+}
+
+i {
+  font-size: max(19px, 1.1vmax) !important;
+}
+
+.login-btn,
+.signup-btn,
+.botao-principal,
+.botao-google {
+  font-size: max(14px, 1.1vmax) !important;
+}
+
+.botao-voltar i,
+.botao-voltar-conversa i,
+.botao-voltarC {
+  font-size: max(20px, 1.3vmax) !important;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 body {
@@ -44,7 +91,7 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  font-size: 2vmax;
+  font-size: max(30px, 1.6vmax);
   gap: 8px;
   font-weight: 600;
 }
@@ -52,13 +99,13 @@ header {
 .menu {
   display: flex;
   gap: 2vw;
-  font-size: 1.2vmax;
 }
 
 .menu a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  font-size: max(14px, 1.1vmax);
 }
 
 .menu a:hover {
@@ -78,7 +125,6 @@ header {
   padding: 1.3vh 1.2vw;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 1.2vmax;
 }
 
 .login-btn:hover {
@@ -94,6 +140,8 @@ header {
   background: linear-gradient(45deg, #ffa500, #ff6b4a);
   color: #fff;
 }
+
+
 
 .User-area {
   display: flex;
@@ -297,8 +345,8 @@ main h2 {
 }
 
 .story-img {
-  width: 80px;
-  height: 80px;
+  width: min(max(90px, 10vmin), 80px);
+  height: min(max(90px, 10vmin), 80px);
   border-radius: 50%;
   padding: 4px;
   background: linear-gradient(45deg, #ffc043, #ff6b4a);
@@ -349,6 +397,7 @@ main h2 {
 
 .card {
   flex: 0 0 18vw;
+  min-width: 220px;
   background: #fff;
   border-radius: 14px;
   margin: 1vh 0 3vh 0;
@@ -371,6 +420,7 @@ main h2 {
 .card img {
   width: 100%;
   height: 37vh;
+  min-height: 180px;
   object-fit: cover;
 }
 
@@ -577,7 +627,7 @@ footer h2 {
 .footer-col h3 {
   color: #f5e8da;
   margin-bottom: 1vh;
-  font-size: 1.4vmax;
+  font-size: max(16px, 1.3vmax);
 }
 
 .footer-col ul {
@@ -593,6 +643,7 @@ footer h2 {
   color: #e9e9e9;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: max(13px, 1vmax);
 }
 
 .footer-col ul li a:hover {
@@ -778,10 +829,6 @@ footer h2 {
   background: none;
 }
 
-.botao-voltar i {
-  font-size: 1.7vmax;
-}
-
 /* =============================== */
 /*   ETAPAS DE CRIAÇÃO DE PERFIL   */
 /* =============================== */
@@ -907,6 +954,24 @@ footer h2 {
   padding: 2vh 0;
 }
 
+.faixa {
+  position: absolute;
+  width: 100%;
+  height: 10vh;
+  background: rgba(255, 255, 255, 0.26);
+  z-index: -1;
+}
+
+.topo {
+  top: 0;
+  left: 0;
+}
+
+.fundo {
+  bottom: 0;
+  left: 0;
+}
+
 .tinder-wrapper {
   width: 100%;
   display: flex;
@@ -915,7 +980,7 @@ footer h2 {
 }
 
 .tinder-card-ui {
-  width: 330px;
+  width: min(330px, 90vw);
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
@@ -926,16 +991,15 @@ footer h2 {
   touch-action: pan-y;
 }
 
-/* FOTO */
 .tinder-photo {
   width: 100%;
   height: 380px;
+  min-height: 260px;
   object-fit: cover;
 }
 
-/* INFOS */
 .tinder-info {
-  padding: 2vh 2vw 1vh;
+  padding: 2vh 1vw 1vh;
 }
 
 .tinder-info h3 {
@@ -964,20 +1028,21 @@ footer h2 {
   margin-top: 10px;
 }
 
-.tinder-tag-item {
-  background: #f2f2f2;
-  padding: 5px 12px;
-  border-radius: 16px;
-  font-size: 0.85rem;
-  color: #444;
+.tag-interesse {
+  padding: 0.7vh 1.2vw;
+  background: #F8F8F8;
+  border-radius: 20px;
+  font-size: 1vmax;
+  color: #626262;
+  box-shadow: 0 1px 2.7px rgba(0, 0, 0, 0.336);
 }
 
 /* BOTÕES */
 .tinder-buttons {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  padding: 2vh 0;
+  gap: 0.8vw;
+  padding: 2vh 0 3vh 0;
 }
 
 .tinder-btn {
@@ -988,7 +1053,7 @@ footer h2 {
   font-size: 1.6rem;
   cursor: pointer;
   background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.18);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1011,17 +1076,27 @@ footer h2 {
   background: #d8ffd8;
 }
 
-/* SWIPE ANIMAÇÃO */
-.tinder-card-ui.swipe-right {
-  transform: translateX(200px) rotate(15deg);
-  opacity: 0;
-  transition: 0.4s;
+.mensagens-btn {
+  position: fixed;
+  bottom: 1.6vh;
+  right: 4vh;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1f1f1f;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: 0.25s;
 }
 
-.tinder-card-ui.swipe-left {
-  transform: translateX(-200px) rotate(-15deg);
-  opacity: 0;
-  transition: 0.4s;
+.mensagens-btn:hover {
+  background: #2a2a2a;
+  transform: scale(1.05);
 }
 
 /* ============================================*/
@@ -1135,7 +1210,7 @@ footer h2 {
 }
 
 .perfil-nome {
-  font-size: 1.6vmax;
+  font-size: max(20px, 1.6vmax);
   font-weight: bold;
 }
 
@@ -1165,7 +1240,7 @@ footer h2 {
 
 .perfil-detalhes {
   margin-top: 1vh;
-  font-size: 1.1vmax;
+  font-size: max(14px, 1.1vmax);
   display: flex;
   gap: 1.5vw;
 }
@@ -1237,17 +1312,12 @@ footer h2 {
   color: #ffffff;
 }
 
-
-/* ===============
-   COMPANHEIROS
-   =============== */
-
 .perfil-companheiro {
-    display: flex;
-    gap: 14px;
-    padding: 14px 0;
-    border-bottom: 1px solid #eee;
-    position: relative;
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #eee;
+  position: relative;
 }
 
 .nota-data i {
@@ -1255,42 +1325,41 @@ footer h2 {
 }
 
 .perfil-comp-foto {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .perfil-more {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    color: #555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
 }
 
 .logout-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
 }
 
 .logout-box {
-    background: #fff;
-    padding: 25px;
-    border-radius: 15px;
-    width: 320px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    animation: fadeIn .2s;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 .logout-box h3 {
@@ -1298,30 +1367,631 @@ footer h2 {
 }
 
 .logout-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
 }
 
 .btn-cancelar, .btn-sair {
-    width: 48%;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+  width: 48%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .btn-cancelar {
-    background: #ddd;
+  background: #ddd;
 }
 
 .btn-sair {
-    background: #ff4b4b;
-    color: white;
+  background: linear-gradient(45deg, #ffa500, #ff6b4a);
+  color: white;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+/* ============================================*/
+/*              PÁGINA DE CONVERSA             */
+/* ============================================*/
+
+.container-principal {
+  display: flex;
+  height: 100vh;
+  background: #ffffff;
+  overflow: hidden;
 }
+
+/* painel esquerdo */
+.painel-conversas {
+  width: 35%;
+  max-width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-right: 1px solid #f1f1f1;
+  padding: 0;
+  margin: 0;
+}
+
+/* topo */
+.topo-conversas {
+  width: 100%;
+  background: linear-gradient(to right, #ff9800, #ffb74d);
+  padding: 15px 20px;
+  color: white;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* ===== BUSCA ===== */
+
+.busca-conversas {
+  display: flex;
+  gap: .8rem;
+  padding: 10px 15px;
+  align-items: center;
+}
+
+.busca-conversas a {
+  text-decoration: none;
+}
+
+.botao-voltar-conversa {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.busca-conversas input {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: none;
+  background: #f7f7f7;
+  font-size: 15px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* LISTA DE CONVERSAS */
+
+.lista-conversas {
+  list-style: none;
+  padding: 10px 15px;
+  margin: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.item-conversa {
+  background: white;
+  padding: 12px;
+  border-radius: 18px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  cursor: pointer;
+}
+
+.foto-contato {
+  width: min(max(45px, 12vw), 55px);
+  height: min(max(45px, 12vw), 55px);
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.info-texto h3 {
+  margin: 0;
+  font-size: max(14px, 0.95rem);
+  font-weight: 600;
+}
+
+.info-texto p {
+  margin: 2px 0 0;
+  font-size: max(12px, 0.8rem);
+  color: #777;
+}
+
+.tempo {
+  margin-left: auto;
+  font-size: 12px;
+  color: #aaa;
+  font-weight: 500;
+}
+
+/* ============================================*/
+/*             PAINEL MENSAGENS                */
+/* ============================================*/
+
+.painel-mensagens {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.topo-mensagens {
+  width: 100%;
+  background: linear-gradient(to right, #ff9800, #ffb74d);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.topo-mensagens img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.nome-contato {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.botao-voltarC {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+.corpo-mensagens {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.mensagem {
+  max-width: min(75%, 450px);
+  padding: 12px 16px;
+  font-size: max(14px, 1rem);
+  line-height: 1.4;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.mensagem-recebida {
+  background: #ffffff;
+  border: 1px solid #eee;
+  align-self: flex-start;
+}
+
+.mensagem-enviada {
+  background: linear-gradient(to right, #ffa726, #fb8c00);
+  color: white;
+  align-self: flex-end;
+}
+
+/* ENVIAR MENSAGEM */
+.enviar-msg {
+  padding: 10px 15px;
+  display: flex;
+  gap: 10px;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.enviar-msg input {
+  flex: 1;
+  padding: 12px 18px;
+  border-radius: 22px;
+  background: #f6f6f6;
+  border: none;
+  font-size: 15px;
+  outline: none;
+}
+
+.botao-enviar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(to right, #ffa726, #fb8c00);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ==========================================================
+   MENU MOBILE (HAMBÚRGUER)
+   ========================================================== */
+
+.menu-mobile-btn {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  right: -270px;
+  width: 270px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+  display: flex;
+  padding: 20px;
+  transition: 0.35s;
+  z-index: 9999;
+}
+
+.menu-mobile nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.menu-mobile button {
+  display: block;
+  justify-content: flex-start;
+}
+
+.menu-mobile a {
+  padding: 12px 0;
+  font-size: 18px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-mobile a:hover {
+  color: #ff6b4a;
+}
+
+.menu-mobile .fechar-menu {
+  background: none;
+  border: none;
+  font-size: 24px;
+  align-self: flex-end;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* ============================================*/
+/*                RESPONSIVIDADE               */
+/* ============================================*/
+
+/* TELEFONES MUITO PEQUENOS */
+@media (max-width: 480px) {
+  body, p, span, a, input, button {
+    font-size: max(15px, 3.8vw) !important;
+  }
+
+  h1, h2, h3 {
+    font-size: max(18px, 5vw) !important;
+  }
+
+  .formulario-perfil textarea {
+    font-size: max(16px, 1.4vmax) !important;
+  }
+
+  .item-interesse,
+  .tag-interesse {
+    padding: 1vh 2.2vw !important;
+  }
+
+  .divisor-autenticacao {
+    font-size: max(16px, 1.6vmax) !important;
+  }
+
+  .botao-google img {
+    width: max(26px, 6vw) !important;
+  }
+
+  .logo-titulo-autenticacao h2 {
+    font-size: max(32px, 7vw) !important;
+  }
+
+  .menu-mobile a {
+    font-size: max(16px, 4.2vw) !important;
+  }
+
+  .story span {
+    font-size: max(14px, 3.8vw) !important;
+  }
+
+  .hero h2 {
+    font-size: max(22px, 6vw) !important;
+  }
+
+  .hero p {
+    font-size: max(15px, 4.6vw) !important;
+  }
+
+  .passo p,
+  .passo h3 {
+    font-size: max(15px, 4vw) !important;
+  }
+
+  .card h3 {
+    font-size: max(16px, 4vw) !important;
+  }
+
+  .passo {
+    width: 24vw;        
+    max-width: 320px;  
+    min-width: 220px; 
+  }
+
+  .card p,
+  .card .info span {
+    font-size: max(14px, 3.7vw) !important;
+  }
+
+  .perfil-nome {
+    font-size: max(18px, 5vw) !important;
+  }
+
+  .perfil-detalhes {
+    font-size: max(14px, 4vw) !important;
+  }
+
+  .topo-conversas h2 { 
+    font-size: 22px; 
+  }
+  .busca-conversas input { 
+    font-size: 14px; 
+  }
+}
+
+@media (max-width: 600px) {
+
+  .menu a {
+    font-size: max(15px, 3.5vw) !important;
+  }
+
+  .cards-container .card {
+    min-width: 260px;
+  }
+
+  .card-content i {
+    font-size: max(16px, 4vw) !important;
+  }
+
+  .busca input {
+    font-size: max(15px, 3.4vw) !important;
+  }
+
+  .mensagem {
+    font-size: max(15px, 4vw) !important;
+  }
+
+  .enviar-msg input {
+    font-size: max(15px, 4vw) !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+   .logo {
+    font-size: max(22px, 5vw) !important;
+  }
+
+  .menu a {
+    font-size: max(16px, 3.8vw) !important;
+  }
+
+  .card h3 {
+    font-size: max(17px, 3.8vw) !important;
+  }
+
+  .card p {
+    font-size: max(14px, 3.5vw) !important;
+  }
+
+  .perfil-card,
+  .perfil-box {
+    font-size: max(15px, 3.8vw) !important;
+  }
+
+  .mensagens-btn {
+    bottom: 3vh !important;
+  }
+
+  .botao-voltarC {
+      margin-right: 8px !important;
+  }
+
+  .tinder-wrapper {
+      margin-top: 6vh !important;
+  }
+
+  .tinder-info h3 {
+    font-size: max(18px, 4.2vw) !important;
+  }
+
+  .tinder-bio {
+    margin-top: 10px !important;
+    padding: 0 1.6vw !important;
+    font-size: max(16px, 1.2rem) !important;
+  }
+
+  .tinder-btn i {
+    font-size: 2rem !important;
+}
+
+  .Navegar {
+    justify-content: space-between !important;
+  }
+
+  /* esconde menu desktop no mobile */
+  .menu {
+    display: none !important;
+  }
+
+  /* Agrupa área do usuário + login + menu-btn no lado direito */
+  .right-mobile-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .Log-area,
+  .User-area {
+    gap: 10px;
+  }
+
+  .menu-mobile-btn {
+    display: block !important;
+  }
+}
+
+
+/* MOBILE PADRÃO */
+@media (max-width: 850px) {
+
+  .painel-conversas {
+    width: 100%;
+    max-width: none;
+  }
+
+  .painel-mensagens {
+    display: none;
+  }
+
+  .painel-mensagens.ativo {
+    display: flex;
+  }
+
+  .painel-conversas.escondido {
+    display: none;
+  }
+
+  .botao-voltarC {
+    display: block;
+  }
+}
+
+/* MOBILE MAIOR / TABLETS PEQUENOS */
+@media (max-width: 900px) {
+
+   h1, h2, h3, p, span, a {
+    font-size: max(16px, 2.9vw) !important;
+  }
+
+  .hero h2 {
+    font-size: max(24px, 4vw) !important;
+  }
+
+  .hero p {
+    font-size: max(16px, 3vw) !important;
+  }
+
+  .card h3 {
+    font-size: max(18px, 3vw) !important;
+  }
+
+  .card p {
+    font-size: max(15px, 2.7vw) !important;
+  }
+
+  .perfil-nome {
+    font-size: max(22px, 3.6vw) !important;
+  }
+
+  .perfil-card {
+    margin-top: 13vh;
+  }
+
+  /* Ocultar aside */
+  .anuncios-sidebar {
+    display: none !important;
+  }
+
+  /* Grid 1 coluna */
+  .container {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Menu desktop some */
+  nav.menu {
+    display: none;
+  }
+
+  /* Mostrar botão hambúrguer */
+  .menu-mobile-btn {
+    display: block;
+  }
+
+  /* Menu mobile oculto inicialmente */
+  .menu-mobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -270px;
+    width: 270px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  /* Footer vira coluna */
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-col {
+    width: 100% !important;
+    text-align: start;
+    gap: 20px;
+  }
+
+  /* Cards responsivos */
+  .card {
+    flex: 0 0 75vw;
+    min-width: 270px;
+  }
+
+  /* Evitar fontes pequenas */
+  h1, h2, h3, span, p, a {
+    font-size: max(15px, 3.3vw);
+  }
+
+  .hero h2 {
+    font-size: max(20px, 4.5vw);
+  }
+
+  .hero p {
+    font-size: max(14px, 3.7vw);
+  }
+
+  .busca input {
+    font-size: max(15px, 3.2vw);
+  }
+}
+
+/* TABLETS MÉDIOS */
+@media (max-width: 1100px) {
+  .painel-conversas {
+    max-width: 450px;
+  }
+}
+

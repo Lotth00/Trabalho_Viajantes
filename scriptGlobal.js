@@ -30,14 +30,20 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// Botão CANCELAR
-document.getElementById("cancelLogout").addEventListener("click", () => {
-    document.getElementById("logoutPopup").style.display = "none";
-});
+const cancelBtn = document.getElementById("cancelLogout");
+const confirmBtn = document.getElementById("confirmLogout");
+const popup = document.getElementById("logoutPopup");
 
-// Botão CONFIRMAR
-document.getElementById("confirmLogout").addEventListener("click", () => {
-    localStorage.removeItem("usuarioLogado");
-    atualizarInterfaceLogin();
-    window.location.href = "/Paginas/index.html";
-});
+if (cancelBtn && popup) {
+    cancelBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+}
+
+if (confirmBtn && popup) {
+    confirmBtn.addEventListener("click", () => {
+        localStorage.removeItem("usuarioLogado");
+        atualizarInterfaceLogin();
+        window.location.href = "/Paginas/index.html";
+    });
+}

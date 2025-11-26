@@ -8,20 +8,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="body-tinder">
-    
+<body class="body-tinder overflow-hidden">
+
+<div class="faixa topo"></div>
+
+<a href="/Paginas/index.html">
+    <button class="botao-voltar"><i class="fa-solid fa-arrow-left"></i></button>
+</a>
+
 <div class="tinder-wrapper">
   <div class="tinder-card-ui">
 
-    <img class="tinder-photo" src="/IMG/Viajantes_Perfils/Image1.png" alt="Foto">
+    <img class="tinder-photo" src="/IMG/Viajantes_Perfils/Image1.png" alt="Foto" draggable="false">
 
     <div class="tinder-info">
       <h3>Julia Caravel, 31 <img src="/IMG/Viajantes_Perfils/verified.png" class="tinder-verified"></img></h3>
       <p class="tinder-bio">Apaixonada por praias e trilhas!</p>
 
       <div class="tinder-tags-ui">
-        <span class="item-interesse">Praias</span>
-        <span class="item-interesse">Aventura</span>
+        <span class="tag-interesse">Praias</span>
+        <span class="tag-interesse">Aventura</span>
       </div>
     </div>
 
@@ -33,38 +39,99 @@
   </div>
 </div>
 
+<button class="mensagens-btn">
+  <i class="fa-regular fa-paper-plane"></i>
+  Mensagens
+</button>
+
+<div class="faixa fundo"></div>
+
 <script>
-const card = document.querySelector('.tinder-card-ui');
+const cartao = document.querySelector('.tinder-card-ui');
 
-let startX = 0;
-let currentX = 0;
-let dragging = false;
+let inicioX = 0; 
+let deslocamentoX = 0;
+let arrastando = false;
 
-card.addEventListener("pointerdown", (e) => {
-  dragging = true;
-  startX = e.clientX;
+// Impede arraste nativo das imagens
+document.querySelectorAll("img").forEach(img => {
+  img.setAttribute("draggable", "false");
 });
 
-document.addEventListener("pointermove", (e) => {
-  if (!dragging) return;
-
-  currentX = e.clientX - startX;
-  card.style.transform = `translateX(${currentX}px) rotate(${currentX / 20}deg)`;
+// Quando começa o toque/clique
+cartao.addEventListener("pointerdown", (evento) => {
+  arrastando = true;
+  inicioX = evento.clientX;
+  cartao.style.transition = "none"; 
 });
 
+// Durante movimento
+document.addEventListener("pointermove", (evento) => {
+  if (!arrastando) return;
+
+  deslocamentoX = evento.clientX - inicioX;
+
+  // Transparência mais lenta
+  let opacidade = 1 - Math.min(Math.abs(deslocamentoX) / 600, 0.7);
+  cartao.style.opacity = opacidade;
+
+  cartao.style.transform = `
+    translateX(${deslocamentoX}px)
+    rotate(${deslocamentoX / 18}deg)
+  `;
+});
+
+// Quando solta o card
 document.addEventListener("pointerup", () => {
-  if (!dragging) return;
-  dragging = false;
+  if (!arrastando) return;
+  arrastando = false;
 
-  if (currentX > 120) {
-    card.classList.add("swipe-right");
-  } else if (currentX < -120) {
-    card.classList.add("swipe-left");
-  } else {
-    card.style.transform = "translateX(0) rotate(0)";
+  const limite = 80;
+
+  cartao.style.transition = "0.45s ease-out";
+
+  if (deslocamentoX > limite) {
+    cartao.style.transform = "translateX(900px) rotate(30deg)";
+    cartao.style.opacity = 0;
+    esconderCartao();
+  } 
+  else if (deslocamentoX < -limite) {
+    cartao.style.transform = "translateX(-900px) rotate(-30deg)";
+    cartao.style.opacity = 0;
+    esconderCartao();
+  } 
+  else {
+    cartao.style.transform = "translateX(0) rotate(0)";
+    cartao.style.opacity = 1;
   }
 });
+
+const botaoNao = document.querySelector(".tndr-no");
+const botaoSim = document.querySelector(".tndr-yes");
+
+// Botão NÃO (esquerda)
+botaoNao.addEventListener("click", () => {
+  cartao.style.transition = "0.45s ease-out";
+  cartao.style.transform = "translateX(-900px) rotate(-30deg)";
+  cartao.style.opacity = 0;
+  esconderCartao();
+});
+
+// Botão SIM (direita)
+botaoSim.addEventListener("click", () => {
+  cartao.style.transition = "0.45s ease-out";
+  cartao.style.transform = "translateX(900px) rotate(30deg)";
+  cartao.style.opacity = 0;
+  esconderCartao();
+});
+
+function esconderCartao() {
+  setTimeout(() => {
+    cartao.style.display = "none";
+  }, 450);
+}
 </script>
+
 
 <script src="/scriptGlobal.js"></script>
 

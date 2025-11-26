@@ -19,35 +19,50 @@
       </div>
 
       <nav class="menu">
-        <a href="#" class="active">Início</a>
-        <a href="#">Destinos</a>
+        <a href="#" class="active" data-target="hero">Início</a>
+        <a href="#" data-target="cards-destaques">Destinos</a>
         <a href="/Paginas/Funcionalidades/Viajantes_Swipe.html">Viajantes</a>
-        <a href="#">Grupos</a>
-        <a href="#">Sobre</a>
+        <a href="#" data-target="grupo-destino">Grupos</a>
+        <a href="#" data-target="sobre">Sobre</a>
       </nav>
 
-      <div class="Log-area">
-        <a href="/Paginas/Login_Cadastro/Entrar.html"><button class="login-btn">Entrar</button></a>
-        <a href="/Paginas/Login_Cadastro/Cadastrar.html"><button class="signup-btn">Cadastrar</button></a>
-      </div>
-
-      <div class="User-area" style="display: none;">
-
-        <div class="icon-btn notificacao">
-            <i class="fa-solid fa-heart"></i>
-            <span class="notificacao-ponto"></span>
+     
+     <div class="right-mobile-group">
+    
+        <div class="Log-area">
+            <a href="/Paginas/Login_Cadastro/Entrar.html"><button class="login-btn">Entrar</button></a>
+            <a href="/Paginas/Login_Cadastro/Cadastrar.html"><button class="signup-btn">Cadastrar</button></a>
         </div>
 
-        <div class="icon-btn conversa">
-          <i class="fa-solid fa-comment"></i>
+        <div class="User-area" style="display: none;">
+
+            <a href="/Paginas/Funcionalidades/Conversas.html">
+                <div class="icon-btn conversa"><i class="fa-solid fa-comment"></i></div>
+            </a>
+
+            <a href="/Paginas/Funcionalidades/Perfil.html">
+                <div class="user-foto">
+                    <img src="/IMG/Stories/foto.png" alt="Foto do usuário">
+                </div>
+            </a>
         </div>
 
-        <a href="/Paginas/Funcionalidades/Perfil.html">
-        <div class="user-foto">
-          <img src="/IMG/Stories/foto.png" alt="Foto do usuário">
+        <div class="menu-mobile-btn">
+            <i class="fa-solid fa-bars"></i>
         </div>
-        </a>
-        
+
+     </div>
+
+      <div class="menu-mobile">
+            <button class="fechar-menu"><i class="fa-solid fa-xmark"></i></button>
+
+           <nav>
+            <a href="/Paginas/index.html">Início</a>
+            <a href="#cards-destaques">Destinos</a>
+            <a href="/Paginas/Funcionalidades/Viajantes_Swipe.html">Viajantes</a>
+            <a href="#grupo-destino">Grupos</a>
+            <a href="#">Sobre</a>
+           </nav>
       </div>
     </section>
 
@@ -216,7 +231,7 @@
       </div>
     </section>
 
-    <section class="grupos">
+    <section class="grupos" id="grupo-destino">
       <div class="titulo">
         <h2>Grupos de Viagens</h2>
         <div class="divisoria"></div>
@@ -330,7 +345,7 @@
 
   </main>
 
-  <aside>
+  <aside class="anuncios-sidebar">
     <div class="ad-box promo">
       <img src="/IMG/Anuncio/ad1.png" alt="Promoção Paris">
     </div>
@@ -468,6 +483,31 @@ function ativarDragScrollNosStories() {
 ativarDragScrollNosStories();
 
 window.addEventListener('resize', ativarDragScrollNosStories);
+</script>
+
+<script>
+document.querySelector(".menu-mobile-btn").addEventListener("click", () => {
+    document.querySelector(".menu-mobile").style.right = "0";
+});
+
+document.querySelector(".fechar-menu").addEventListener("click", () => {
+    document.querySelector(".menu-mobile").style.right = "-270px";
+});
+</script>
+
+<script>
+document.querySelectorAll('.menu a[data-target]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault(); // previne o comportamento padrão do link
+
+    const idSecao = link.getAttribute('data-target');
+    const secao = document.getElementById(idSecao);
+
+    if (secao) {
+      secao.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
 </script>
 
 <script src="/scriptGlobal.js"></script>

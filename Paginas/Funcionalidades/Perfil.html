@@ -12,47 +12,63 @@
 
     <header>
     <section class="Navegar">
-      <div class="logo">
+    <a href="/Paginas/index.html">
+    <div class="logo">
         <span style="font-family: 'Protest Riot', cursive;">Nomadoo</span>
       </div>
+    </a>
+     
 
       <nav class="menu">
         <a href="/Paginas/index.html">Início</a>
-        <a href="#">Destinos</a>
+        <a href="/Paginas/index.html#cards-destaques">Destinos</a>
         <a href="/Paginas/Funcionalidades/Viajantes_Swipe.html">Viajantes</a>
-        <a href="#">Grupos</a>
+        <a href="/Paginas/index.html#grupo-destino">Grupos</a>
         <a href="#">Sobre</a>
       </nav>
 
-      <div class="Log-area">
-        <a href="/Paginas/Login_Cadastro/Entrar.html"><button class="login-btn">Entrar</button></a>
-        <a href="/Paginas/Login_Cadastro/Cadastrar.html"><button class="signup-btn">Cadastrar</button></a>
-      </div>
-
-      <div class="User-area" style="display: none;">
-
-        <div class="icon-btn notificacao">
-            <i class="fa-solid fa-heart"></i>
-            <span class="notificacao-ponto"></span>
+     <div class="right-mobile-group">
+    
+        <div class="Log-area">
+            <a href="/Paginas/Login_Cadastro/Entrar.html"><button class="login-btn">Entrar</button></a>
+            <a href="/Paginas/Login_Cadastro/Cadastrar.html"><button class="signup-btn">Cadastrar</button></a>
         </div>
 
-        <div class="icon-btn conversa">
-          <i class="fa-solid fa-comment"></i>
+        <div class="User-area" style="display: none;">
+
+            <a href="/Paginas/Funcionalidades/Conversas.html">
+                <div class="icon-btn conversa"><i class="fa-solid fa-comment"></i></div>
+            </a>
+
+            <a href="/Paginas/Funcionalidades/Perfil.html">
+                <div class="user-foto">
+                    <img src="/IMG/Stories/foto.png" alt="Foto do usuário">
+                </div>
+            </a>
         </div>
 
-        <a href="/Paginas/Funcionalidades/Perfil.html">
-        <div class="user-foto">
-          <img src="/IMG/Stories/foto.png" alt="Foto do usuário">
+        <div class="menu-mobile-btn">
+            <i class="fa-solid fa-bars"></i>
         </div>
-        </a>
-        
+
+     </div>
+
+      <div class="menu-mobile">
+            <button class="fechar-menu"><i class="fa-solid fa-xmark"></i></button>
+
+           <nav>
+            <a href="/Paginas/index.html">Início</a>
+            <a href="#">Destinos</a>
+            <a href="/Paginas/Funcionalidades/Viajantes_Swipe.html">Viajantes</a>
+            <a href="#">Grupos</a>
+            <a href="#">Sobre</a>
+           </nav>
       </div>
     </section>
 
-   
     </header>
 
-    <header class="perfil-capa">
+    <section class="perfil-capa">
         <button class="perfil-editar-capa">
             <img src="/IMG/Perfil/camera2.png">Editar Capa
         </button>
@@ -72,7 +88,7 @@
                 </label>
             </div>
 
-    </header>
+    </section>
 
     <section class="perfil-main">
     <section class="perfil-card">
@@ -190,7 +206,6 @@
   
     </section>
 
-    <!-- POPUP DE CONFIRMAÇÃO DE LOGOUT -->
     <div class="logout-popup" id="logoutPopup">
     <div class="logout-box">
         <h3>Deseja realmente sair?</h3>
@@ -203,6 +218,16 @@
     </div>
     </div>
    
+    <script>
+    document.querySelector(".menu-mobile-btn").addEventListener("click", () => {
+        document.querySelector(".menu-mobile").style.right = "0";
+    });
+
+    document.querySelector(".fechar-menu").addEventListener("click", () => {
+        document.querySelector(".menu-mobile").style.right = "-270px";
+    });
+    </script>
+
     <script src="/scriptGlobal.js"></script>
 
 </body>
